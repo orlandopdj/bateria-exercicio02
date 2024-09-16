@@ -7,7 +7,9 @@ const App = () => {
     return (
         <>
             <div className="container-close">
-                <button onClick={handleClickCloseButton} className="close">Fechar</button>
+                <button onClick={handleClickCloseButton} className="close">
+                    <span>Fechar</span>
+                </button>
             </div>
 
             <div className="steps">
@@ -20,8 +22,12 @@ const App = () => {
                 <p className="message">Passo 1: Entender o problema do cliente</p>
 
                 <div className="buttons">
-                    <button onClick={handleClickBackButton}>Anterior</button>
-                    <button onClick={handleClickNextButton}>Próximo</button>
+                    <button onClick={handleClickBackButton}>
+                        <span>
+                            Anterior</span></button>
+                    <button onClick={handleClickNextButton}
+                    ><span>
+                            Próximo</span></button>
                 </div>
 
             </div>
