@@ -1,40 +1,50 @@
-const App = () => {
+const cardsInfo = [
+    {
+        id: 7336,
+        question: "Do quê aplicações React são feitas?",
+        answer: "Componentes",
+    },
+    {
+        id: 8832,
+        question: "Qual é o nome da sintaxe usada para descrever UI no React?",
+        answer: "JSX",
+    },
+    {
+        id: 3457,
+        question: "Em qual linguagem o React é baseado?",
+        answer: "JavaScript",
+    },
+    {
+        id: 9103,
+        question: "Qual método usar para renderizar uma lista no React?",
+        answer: "map",
+    },
+    {
+        id: 1297,
+        question: "Qual empresa criou o React?",
+        answer: "Meta",
+    },
+    {
+        id: 2002,
+        question: "Como passar informações para um componente React?",
+        answer: "Através de props",
+    },
+]
 
-    const handleClickCloseButton = (e) => console.log(e.target.textContent)
-    const handleClickBackButton = (e) => console.log(e.target.textContent)
-    const handleClickNextButton = (e) => console.log(e.target.textContent)
+
+const App = () => {
+    const handleLog = (id, answer) => console.log(`id: ${id}, Resposta: ${answer}`)
 
     return (
-        <>
-            <div className="container-close">
-                <button onClick={handleClickCloseButton} className="close">
-                    <span>Fechar</span>
-                </button>
-            </div>
-
-            <div className="steps">
-                <div className="numbers">
-                    <div className="active">1</div>
-                    <div>2</div>
-                    <div>3</div>
-                </div>
-
-                <p className="message">Passo 1: Entender o problema do cliente</p>
-
-                <div className="buttons">
-                    <button onClick={handleClickBackButton}>
-                        <span>
-                            Anterior</span>
-                    </button>
-                    <button onClick={handleClickNextButton}
-                    ><span>
-                            Próximo</span>
-                    </button>
-                </div>
-
-            </div>
-        </>
+        <ul className="flashcards">
+            {cardsInfo.map(({ id, question, answer }) => (
+                <li key={id} className="card" onClick={() => handleLog(id, answer)}>
+                    {question}
+                </li>
+            ))}
+        </ul>
     )
+
 }
 
 export { App }
