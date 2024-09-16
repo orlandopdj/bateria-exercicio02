@@ -24,10 +24,12 @@ const App = () => {
                 <div className="buttons">
                     <button onClick={handleClickBackButton}>
                         <span>
-                            Anterior</span></button>
+                            Anterior</span>
+                    </button>
                     <button onClick={handleClickNextButton}
                     ><span>
-                            Próximo</span></button>
+                            Próximo</span>
+                    </button>
                 </div>
 
             </div>
